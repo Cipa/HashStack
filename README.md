@@ -9,7 +9,7 @@ var hashIt = new HashStack(4);
 hashIt.set('test1', 1);
 hashIt.set('test2', 2);
 ```
-will change the url to hash to #test1/test2//
+will change the url's hash to **#test1/test2//**
 
 
 
