@@ -1,12 +1,13 @@
-function HashStack(stackLen, separator) {
+function HashStack(stackLen, init, separator) {
 
 	var _stackLen;
+	var _init;
 	var _separator;
 	var _instance = this;
 	
 	_stackLen = _setDefault(stackLen, 1);
 	_separator = _setDefault(separator, '/');
-	
+	_init = _setDefault(init, true);
 	
 	function _isUndefined ( value ) {
 	
@@ -29,13 +30,15 @@ function HashStack(stackLen, separator) {
 	
 	function _construct(){
 		
-		_init();
+		if(_init){
+			_instance.init();
+		}
 		
 		return _instance;
 		
 	}
 	
-	function _init(){
+	_instance.init = function(){
 		
 		var currentHash = _instance.get();
 		if(currentHash){

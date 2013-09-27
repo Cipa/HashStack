@@ -1,7 +1,10 @@
 ##A URL hash stack manager
+- can be used as an history plugin
 - generates a custom hashtag that contains a specific number of items 
-- the default separator is '/'
+- the default separator is '/'. You can use your own, just be careful on what you use as Safari and some other browsers will don't accept any type of separator
 - pure js
+- on stack length inconsistencies the stack is cleared
+- tested in IE9, FF, Chrome, Safari
 
 ##Example
 ```
@@ -11,6 +14,13 @@ hashIt.set('test2', 2);
 ```
 will change the url's hash to **#test1/test2//**
 
+##Example
+```
+var hashIt = new HashStack(4, false);
+hashIt.init();
+
+```
+stack init is not called by default so you can check get the hash and initialize manually if needed.
 
 
 ##APIs
@@ -20,7 +30,7 @@ will change the url's hash to **#test1/test2//**
 3. remove();
 
 
-##Real life example with jquery
+##Real life example with jQuery
 
 ```
 //init with a
